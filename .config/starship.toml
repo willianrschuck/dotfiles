@@ -1,0 +1,42 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$time [📁](fg:#d5bdaf) $directory
+\
+$username\
+@\
+$hostname \
+$sudo
+➜ \
+"""
+
+[username]
+style_user = '#cfbaf0'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+[hostname]
+style = '#a3c4f3'
+ssh_only = false
+format = '[$hostname]($style)'
+disabled = false
+
+[time]
+disabled = false
+style = "#d6d2d2"
+format = '[$time]($style)'
+time_format = '%R'
+
+[directory]
+truncation_length = 0
+style = '#ffdab9'
+read_only_style = '#ff686b'
+read_only = ' (ro)'
+format = '[$path]($style)[$read_only]($read_only_style)'
+
+[sudo]
+style = 'bold fg:#caffbf'
+symbol = 'sudo 🔐'
+format = '[$symbol]($style)'
+disabled = false
